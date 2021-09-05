@@ -1,0 +1,19 @@
+{
+    "name": "jray/formbuilder",
+    "description": "This is a simple html form builder",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jray\\Formbuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jogash Ray",
+            "email": "jogashbrur.ete@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
