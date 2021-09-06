@@ -22,7 +22,7 @@ class FormBuilder{
         if(in_array($data['type'], $this->allowed_type)){
 
             // Get the attributes data such as - field name, class, id, value & custom info
-            $attr = $this->setAttribute($data) ;
+            $attr = $this->getAttribute($data) ;
 
             //If the input type is "text"
             if($data['type'] == 'text'){
@@ -57,7 +57,7 @@ class FormBuilder{
      *
      * @return string
      */
-    public function setAttribute($attributes)
+    public function getAttribute($attributes)
     {
         $attrs = [];
         /**
