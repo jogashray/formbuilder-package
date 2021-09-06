@@ -121,3 +121,119 @@ Where, $param = [
             {!! FormBuilder::input($param1) !!}
             {!! FormBuilder::input($param2) !!}
 ```
+## Example :
+Create a welcome.blade.php file in the resouces/views folder - Same as 
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <nav class="navbar navbar-inverse" style="    border-radius: 0px">
+        <h3 class="navbar-text">Simple Form Builder Laravel Package</h3>
+    </nav>
+  
+    <div class="container">
+        @php
+            $text_data = [
+                'id' => 'my_id', 
+                'class' => 'form-control, class2, class3,form-control, primary, input-lg',
+                'type' => 'text',
+                'value' => '100',
+                'required' => true
+
+            ];
+
+            // For select element, value must in associative_array format ['option_value' => 'option']
+            $option_data = [
+                'id' => 'select_option_id', 
+                'class' => 'form-control',
+                'type' => 'select',
+                'value' => [
+                    'option1' => 'option1',
+                    'option2' => 'option2',
+                    'option3' => 'option3',
+                    'option4' => 'option4',
+                    ],
+                'required' => true,
+                'selected' => 'option3'
+            ];
+
+            // For checkbox field
+            $checkbox_data1 = [
+                'name' => 'check_box', 
+                'class' => '',
+                'type' => 'checkbox',
+                'value' => 'checkbox1',
+            ];
+            $checkbox_data2 = [
+                'name' => 'check_box', 
+                'class' => '',
+                'type' => 'checkbox',
+                'value' => 'checkbox1',
+            ];
+            $checkbox_data3 = [
+                'name' => 'check_box', 
+                'class' => '',
+                'type' => 'checkbox',
+                'value' => 'checkbox1',
+                'checked' => true
+            ];
+            // For Radio field
+            $radio_data1 = [
+                'name' => 'radio_field', 
+                'class' => '',
+                'type' => 'radio',
+                'value' => 'radio_val',
+            ];
+            $radio_data2 = [
+                'name' => 'radio_field', 
+                'class' => '',
+                'type' => 'radio',
+                'value' => 'radio_val',
+            ];
+            $radio_data3 = [
+                'name' => 'radio_field', 
+                'class' => '',
+                'type' => 'radio',
+                'value' => 'radio_val',
+                'checked' => true
+            ];
+        @endphp
+        <label for="select_ele">Text Input Field:</label>
+        {!! FormBuilder::input($text_data) !!}
+        <br><br>
+        <label for="select_ele">Select Field:</label>
+        {!! FormBuilder::input($option_data) !!}
+        <br><br>
+        <label for="select_ele">Checkbox Field:</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($checkbox_data1) !!} Checkbox 1</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($checkbox_data2) !!} Checkbox 2</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($checkbox_data3) !!} Checkbox 3</label>
+            
+        <br><br>
+        <label for="select_ele">Radio Field:</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($radio_data1) !!} Radio 1</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($radio_data2) !!} Radio 2</label>
+        <label class="checkbox-inline">  {!! FormBuilder::input($radio_data3) !!} Radio 3</label>
+
+    </div>
+
+    </body>
+</html>
+
+
+```
